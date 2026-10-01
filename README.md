@@ -48,7 +48,7 @@ If you use other mods that add custom crops or change farmland behavior, make su
 ## 🙏 Authors
 
 - Programmer: Steven23334
-- Artists: (your artist names here)
+- Artists: JumDa5he
 ---------
 # 女仆种子
 
@@ -99,4 +99,4 @@ If you use other mods that add custom crops or change farmland behavior, make su
 ## 🙏 作者
 
 - 程序：Steven23334
-- 美术：（这里填你的美术）
+- 美术：JumDa5he
