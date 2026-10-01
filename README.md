@@ -32,7 +32,7 @@ This is an addon for the **Touhou Little Maid** mod. It adds a new crop that gro
 ## ⚠️ Requirements
 
 - **Minecraft Versions**: 1.21.1
-- **Required Mod**: [Touhou Little Maid](https://www.curseforge.com/minecraft/mc-mods/touhou-little-maid),[Steven's Mod API](https://modrinth.com/project/ZfeSnlBx),
+- **Required Mod**: [Touhou Little Maid](https://modrinth.com/project/R0bDWFAW),[Steven's Mod API](https://modrinth.com/project/ZfeSnlBx)
 
 ## ⚠️ Compatibility Notes
 
@@ -83,7 +83,7 @@ If you use other mods that add custom crops or change farmland behavior, make su
 ## ⚠️ 前置要求
 
 - **Minecraft 版本**：1.21.1
-- **必需模组**：[车万女仆 (Touhou Little Maid)](https://www.curseforge.com/minecraft/mc-mods/touhou-little-maid)
+- **必需模组**：- **Required Mod**: [车万女仆 (Touhou Little Maid)](https://modrinth.com/project/R0bDWFAW),[Steven's Mod API](https://modrinth.com/project/ZfeSnlBx)
 
 ## ⚠️ 兼容性提示
 
