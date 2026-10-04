@@ -1,10 +1,12 @@
 package com.github.steven23334.maid_seeds.block;
 
+import com.github.steven23334.maid_seeds.item.MaidModelSelectionData;
 import com.github.steven23334.maid_seeds.item.ModItems;
 import com.github.tartaricacid.touhoulittlemaid.entity.info.ServerCustomPackLoader;
 import com.github.tartaricacid.touhoulittlemaid.entity.passive.EntityMaid;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -21,11 +23,14 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.Optional;
 
 import static net.minecraft.world.level.block.HorizontalDirectionalBlock.FACING;
 
 public class MaidCropBlock extends CropBlock implements EntityBlock {
+    private static final ThreadLocal<String> PENDING_MODEL = new ThreadLocal<>();
+
     public MaidCropBlock() {
         super(Properties.ofFullCopy(Blocks.WHEAT));
     }
@@ -82,6 +87,16 @@ public class MaidCropBlock extends CropBlock implements EntityBlock {
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
+        if (context.getPlayer() instanceof ServerPlayer sp) {
+            // 从玩家的模型池里随机抽一个
+            List<String> pool = MaidModelSelectionData.get(sp).getSelectedModels(sp);
+            String picked = pool.isEmpty()
+                    ? null
+                    : pool.get(sp.getRandom().nextInt(pool.size()));
+            PENDING_MODEL.set(picked);
+        } else {
+            PENDING_MODEL.remove();
+        }
         return defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
@@ -92,7 +107,14 @@ public class MaidCropBlock extends CropBlock implements EntityBlock {
                 && state.getBlock() != oldState.getBlock()
                 && !movedByPiston
                 && level.getBlockEntity(pos) instanceof MaidCropBlockEntity blockEntity) {
-            blockEntity.setModelID(randomID(level));
+
+            String pending = PENDING_MODEL.get();
+            PENDING_MODEL.remove();
+            if (pending != null && !pending.isEmpty()) {
+                blockEntity.setModelID(pending);
+            } else {
+                blockEntity.setModelID(randomID(level));
+            }
         }
     }
 

@@ -22,4 +22,7 @@ public class ModItems {
 
     public static final Supplier<Item> FREE_PHOTO = ITEMS.register("free_photo",
             ItemFreePhoto::new);
+
+    public static final Supplier<Item> MAID_MODEL_SELECTOR = ITEMS.register("maid_model_selector",
+            () -> new MaidModelSelectorItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
 }

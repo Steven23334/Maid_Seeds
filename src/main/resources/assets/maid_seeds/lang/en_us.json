@@ -1,5 +1,13 @@
 {
   "item.maid_seeds.maid_seed": "Maid Seed",
   "item.maid_seeds.free_photo": "Maid Photo",
-  "block.maid_seeds.maid_crop": "Maid Crop"
+  "block.maid_seeds.maid_crop": "Maid Crop",
+  "item.maid_seeds.maid_model_selector": "Maid Seed Model Selector",
+  "gui.maid_seeds.model_selector.title": "Maid Model Selection",
+  "gui.maid_seeds.model_selector.count": "Selected: %s",
+  "gui.maid_seeds.model_selector.current": "Current: %s",
+  "gui.maid_seeds.model_selector.legend": "Green ✓ indicates selected",
+  "gui.maid_seeds.model_selector.help": "Click a model to select it; saves when the screen is closed",
+  "gui.maid_seeds.model_selector.selected": "Selected",
+  "gui.maid_seeds.model_selector.unselected": "Not Selected"
 }

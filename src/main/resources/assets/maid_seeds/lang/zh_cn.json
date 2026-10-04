@@ -1,5 +1,13 @@
 {
   "item.maid_seeds.maid_seed": "女仆种子",
   "item.maid_seeds.free_photo": "女仆照片",
-  "block.maid_seeds.maid_crop": "女仆作物"
+  "block.maid_seeds.maid_crop": "女仆作物",
+  "item.maid_seeds.maid_model_selector": "女仆种子模型选择器",
+  "gui.maid_seeds.model_selector.title": "女仆模型选择",
+  "gui.maid_seeds.model_selector.count": "已选: %s 个",
+  "gui.maid_seeds.model_selector.current": "当前: %s",
+  "gui.maid_seeds.model_selector.legend": "绿色 ✓ 表示已选择",
+  "gui.maid_seeds.model_selector.help": "点击模型进行选择，关闭界面后保存",
+  "gui.maid_seeds.model_selector.selected": "已选择",
+  "gui.maid_seeds.model_selector.unselected": "未选择"
 }
